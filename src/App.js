@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
-import { View, Text } from 'react-native'
 import SplashScreen from 'react-native-splash-screen'
+import { NavigationContainer } from '@react-navigation/native';
+import AppNavigator from './navigations/AppNavigator'
 
 export default function App() {
   useEffect(() => {
@@ -8,8 +9,8 @@ export default function App() {
   }, [])
 
   return (
-    <View>
-      <Text>Hello</Text>
-    </View>
+    <NavigationContainer>
+      <AppNavigator />
+    </NavigationContainer>
   )
 }
