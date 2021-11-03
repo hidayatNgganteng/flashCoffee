@@ -13,9 +13,13 @@ const Header = ({ title, leftPress, rightPress }) => {
         <Icon name='arrow-back' size={28} color={theme.colors.black} />
       </TouchableOpacity>
       <Text style={styles.title}>{ title }</Text>
-      <TouchableOpacity onPress={rightPress} style={styles.btn}>
-        <IconAwesome name='refresh' size={23} color={theme.colors.black} />
-      </TouchableOpacity>
+      {
+        rightPress ? (
+          <TouchableOpacity onPress={rightPress} style={styles.btn}>
+            <IconAwesome name='refresh' size={23} color={theme.colors.black} />
+          </TouchableOpacity>
+        ) : <View style={styles.emptyBtn}></View>
+      }
     </View>
   )
 }
@@ -39,5 +43,8 @@ const styles = StyleSheet.create({
     fontSize: theme.fonts.normal,
     color: theme.colors.black,
     fontWeight: 'bold'
+  },
+  emptyBtn: {
+    width: 50
   }
 })

@@ -8,7 +8,8 @@ export default {
     green: '#5ac6ba',
     gray: '#b1b1b1',
     semiGray: '#f4f4f4',
-    native_white: '#ffffff'
+    native_white: '#ffffff',
+    native_gray: 'gray'
   },
   fonts: {
     // xSmall: 12,
