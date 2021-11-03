@@ -1,9 +1,10 @@
 import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
+import CustomButton from './CustomButton'
 import theme from '../theme'
 
-const HeadlineSchedule = ({ title, time }) => {
+const HeadlineSchedule = ({ title, time, isWithTodayLabel }) => {
   return (
     <View>
       <Text style={styles.title}>{ title }</Text>
@@ -11,6 +12,13 @@ const HeadlineSchedule = ({ title, time }) => {
       <View style={styles.timeStyle}>
         <Icon name='clock-outline' size={25} color={theme.colors.black} />
         <Text style={styles.hourStyle}>{ time }</Text>
+        {
+          isWithTodayLabel && (
+            <CustomButton
+              label='TODAY'
+              btnStyles={styles.btn}/>
+          )
+        }
       </View>
     </View>
   )
@@ -32,4 +40,7 @@ const styles = StyleSheet.create({
     marginLeft: 7,
     fontSize: theme.fonts.medium
   },
+  btn: {
+    backgroundColor: theme.colors.pink
+  }
 })

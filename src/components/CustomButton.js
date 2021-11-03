@@ -16,7 +16,7 @@ export default CustomButton
 const styles = StyleSheet.create({
   btn: {
     backgroundColor: theme.colors.green,
-    width: 110,
+    paddingHorizontal: 10,
     paddingVertical: 5,
     borderRadius: 5
   },
