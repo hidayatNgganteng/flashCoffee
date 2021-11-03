@@ -3,8 +3,11 @@ import { StyleSheet, Text, View, Platform } from 'react-native'
 import Icon from 'react-native-vector-icons/Ionicons'
 import IconAwesome from 'react-native-vector-icons/FontAwesome'
 import { TouchableOpacity } from 'react-native-gesture-handler'
-import { Header as HeaderApp } from '@react-navigation/native'
+import { useHeaderHeight } from '@react-navigation/elements';
+
 import theme from '../theme'
+
+const HeaderApp = useHeaderHeight()
 
 const Header = ({ title, leftPress, rightPress }) => {
   return (
