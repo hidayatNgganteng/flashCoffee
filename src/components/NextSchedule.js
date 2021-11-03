@@ -10,7 +10,7 @@ const NextSchedule = ({ navigation, schedules }) => {
   const renderItem = ({item, index}) => (
     <SwipeCard
       item={item}
-      onPress={() => null}/>
+      onPress={() => navigation.navigate('Detail', { schedule: item })}/>
   )
 
   return (

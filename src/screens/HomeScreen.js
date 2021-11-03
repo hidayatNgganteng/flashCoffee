@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { StyleSheet, View } from 'react-native'
-import { ScrollView } from 'react-native-gesture-handler'
+import { FlatList, ScrollView } from 'react-native-gesture-handler'
 import HomeInfo from '../components/HomeInfo'
 import TodaySchedule from '../components/TodaySchedule'
 import NextSchedule from '../components/NextSchedule'
@@ -18,7 +18,8 @@ const scheduleInit = {
   shop_open_hours: '08:00',
   shope_closing_hours: '17:00',
   clock_in: null,
-  clock_out: null
+  clock_out: null,
+  isOpen: true
 }
 
 const HomeScreen = ({ navigation }) => {
@@ -31,6 +32,7 @@ const HomeScreen = ({ navigation }) => {
   }, [])
 
   const todaySchedule = schedules.find(item => item.date === moment().format('YYYY-MM-DD'))
+  const nextSchedule = schedules.filter(item => item.isOpen)
 
   return (
     <View style={styles.container}>
@@ -39,7 +41,7 @@ const HomeScreen = ({ navigation }) => {
       <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={styles.scrollContent}>
         <View>
           <TodaySchedule schedule={todaySchedule} navigation={navigation} />
-          <NextSchedule schedules={schedules} navigation={navigation} />
+          <NextSchedule schedules={nextSchedule} navigation={navigation} />
         </View>
 
         <HomeFooter />
