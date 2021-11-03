@@ -1,10 +1,16 @@
 import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
+import Header from '../components/Header'
 
 const SchedulesScreen = () => {
   return (
     <View>
-      <Text>Schedules</Text>
+      <Header
+        title='UPCOMING SCHEDULE'
+        leftPress={() => null}
+        rightPress={() => null}/>
+
+        
     </View>
   )
 }
