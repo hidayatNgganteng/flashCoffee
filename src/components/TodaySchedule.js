@@ -5,7 +5,9 @@ import HeaderSchedule from './HeaderSchedule'
 import HeadlineSchedule from './HeadlineSchedule'
 import theme from '../theme'
 
-const TodaySchedule = ({ navigation }) => {
+const TodaySchedule = ({ navigation, schedule }) => {
+  const { store_name, shop_open_hours, shope_closing_hours, clock_in, clock_out } = schedule
+
   return (
     <View style={styles.container}>
       <HeaderSchedule
@@ -15,18 +17,18 @@ const TodaySchedule = ({ navigation }) => {
 
       <TouchableOpacity onPress={() => navigation.navigate('Detail')} style={styles.card}>
         <HeadlineSchedule
-          title='Mediterania Garden Residence'
-          time='08:00 - 17:00'/>
+          title={ store_name }
+          time={ `${shop_open_hours} - ${shope_closing_hours}` }/>
 
         <View style={styles.labelInfo}>
           <View style={styles.cardInfo}>
             <CustomButton onPress={() => null} label='CLOCK IN' btnStyles={{}} />
-            <Text style={styles.checkTime}>-- : --</Text>
+            <Text style={styles.checkTime}>{ clock_in === null ? '-- : --' : clock_in }</Text>
           </View>
           <Text style={styles.checkDash}>-----------</Text>
           <View style={styles.cardInfo}>
             <CustomButton onPress={() => null} label='CLOCK OUT' btnStyles={styles.btnClockOut} />
-            <Text style={styles.checkTime}>-- : --</Text>
+            <Text style={styles.checkTime}>{ clock_out === null ? '-- : --' : clock_out }</Text>
           </View>
         </View>
       </TouchableOpacity>

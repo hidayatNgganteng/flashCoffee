@@ -1,12 +1,25 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { StyleSheet, Text, View, Image, Dimensions, TouchableOpacity } from 'react-native'
 import Icon from 'react-native-vector-icons/Ionicons'
+import moment from 'moment'
 import assets from '../assets'
 import theme from '../theme'
 
 const WIDTH_SCREEN = Dimensions.get('window').width
 
 const HomeInfo = () => {
+  const [dateTime, setDateTime] = useState(moment().format('YYYY-MM-DD HH:mm:ss'))
+
+  useEffect(() => {
+    setTime = setInterval(() => { 
+      setDateTime(moment().format('YYYY-MM-DD HH:mm:ss'))
+    }, 1000)
+
+    return () =>{
+        clearInterval(setTime)
+    }
+  }, [])
+
   return (
     <View style={styles.info}>
       <View style={styles.header}>
@@ -19,8 +32,8 @@ const HomeInfo = () => {
         </TouchableOpacity>
       </View>
       <View style={styles.timeStyle}>
-        <Text style={styles.hourStyle}>07:30</Text>
-        <Text style={styles.dateStyle}>Monday, 5Apr 2021</Text>
+        <Text style={styles.hourStyle}>{ moment(dateTime).format('HH:mm') }</Text>
+        <Text style={styles.dateStyle}>{ moment(dateTime).format('dddd, DMMMM YYYY') }</Text>
       </View>
       <Image source={assets.images.bottomGradient} style={styles.bottomGradient} />
     </View>
