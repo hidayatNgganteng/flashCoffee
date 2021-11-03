@@ -39,6 +39,12 @@
 		15590CD20DB3CB47772CE397 /* Pods-FlashCoffee.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlashCoffee.debug.xcconfig"; path = "Target Support Files/Pods-FlashCoffee/Pods-FlashCoffee.debug.xcconfig"; sourceTree = "<group>"; };
 		38F03137F469449C62222B16 /* libPods-FlashCoffee-FlashCoffeeTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FlashCoffee-FlashCoffeeTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FEEA54565B76C1621FBC78E /* libPods-FlashCoffee.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FlashCoffee.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4F32FEC9272C0829003EDCB9 /* Ionicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Ionicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
+		4F32FECA272C083B003EDCB9 /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = MaterialCommunityIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; };
+		4F32FECB272C0860003EDCB9 /* FontAwesome5_Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = FontAwesome5_Regular.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Regular.ttf"; sourceTree = "<group>"; };
+		4F32FECC272C0860003EDCB9 /* FontAwesome5_Brands.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = FontAwesome5_Brands.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Brands.ttf"; sourceTree = "<group>"; };
+		4F32FECD272C0860003EDCB9 /* FontAwesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = FontAwesome.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
+		4F32FECE272C0860003EDCB9 /* FontAwesome5_Solid.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = FontAwesome5_Solid.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Solid.ttf"; sourceTree = "<group>"; };
 		69ADBA007E74698A59E7841B /* Pods-FlashCoffee-FlashCoffeeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlashCoffee-FlashCoffeeTests.debug.xcconfig"; path = "Target Support Files/Pods-FlashCoffee-FlashCoffeeTests/Pods-FlashCoffee-FlashCoffeeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = FlashCoffee/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		853123E885A9485DAF031609 /* Pods-FlashCoffee.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlashCoffee.release.xcconfig"; path = "Target Support Files/Pods-FlashCoffee/Pods-FlashCoffee.release.xcconfig"; sourceTree = "<group>"; };
@@ -86,6 +92,7 @@
 		13B07FAE1A68108700A75B9A /* FlashCoffee */ = {
 			isa = PBXGroup;
 			children = (
+				4F32FEC8272C07C2003EDCB9 /* Fonts */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
@@ -104,6 +111,19 @@
 				38F03137F469449C62222B16 /* libPods-FlashCoffee-FlashCoffeeTests.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4F32FEC8272C07C2003EDCB9 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				4F32FECD272C0860003EDCB9 /* FontAwesome.ttf */,
+				4F32FECC272C0860003EDCB9 /* FontAwesome5_Brands.ttf */,
+				4F32FECB272C0860003EDCB9 /* FontAwesome5_Regular.ttf */,
+				4F32FECE272C0860003EDCB9 /* FontAwesome5_Solid.ttf */,
+				4F32FECA272C083B003EDCB9 /* MaterialCommunityIcons.ttf */,
+				4F32FEC9272C0829003EDCB9 /* Ionicons.ttf */,
+			);
+			name = Fonts;
 			sourceTree = "<group>";
 		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
@@ -145,7 +165,6 @@
 				69ADBA007E74698A59E7841B /* Pods-FlashCoffee-FlashCoffeeTests.debug.xcconfig */,
 				C53F276A4815B5B295B90657 /* Pods-FlashCoffee-FlashCoffeeTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};

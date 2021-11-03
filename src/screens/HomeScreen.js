@@ -1,17 +1,25 @@
 import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
-import { TouchableOpacity } from 'react-native-gesture-handler'
+import { StyleSheet, View, Text } from 'react-native'
+import HomeInfo from '../components/HomeInfo'
+import TodaySchedule from '../components/TodaySchedule'
+import NextSchedule from '../components/NextSchedule'
+import HomeFooter from '../components/HomeFooter'
+import theme from '../theme'
+import { ScrollView } from 'react-native-gesture-handler'
 
 const HomeScreen = ({ navigation }) => {
   return (
-    <View>
-      <Text>Home</Text>
-      <TouchableOpacity onPress={() => navigation.navigate('Schedules')}>
-        <Text>schedules</Text>
-      </TouchableOpacity>
-      <TouchableOpacity onPress={() => navigation.navigate('Detail')}>
-        <Text>detail</Text>
-      </TouchableOpacity>
+    <View style={styles.container}>
+      <HomeInfo />
+
+      <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={styles.scrollContent}>
+        <View>
+          <TodaySchedule />
+          <NextSchedule />
+        </View>
+
+        <HomeFooter />
+      </ScrollView>
     </View>
   )
 }
@@ -19,5 +27,11 @@ const HomeScreen = ({ navigation }) => {
 export default HomeScreen
 
 const styles = StyleSheet.create({
-
+  container: {
+    flex: 1,
+    backgroundColor: theme.colors.native_white
+  },
+  scrollContent: {
+    justifyContent: 'space-between'
+  }
 })
