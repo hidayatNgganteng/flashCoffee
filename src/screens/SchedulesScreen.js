@@ -60,9 +60,9 @@ const SchedulesScreen = ({ navigation, route }) => {
             const findData = data.find(i => moment(i.date).format('YYYY-MM-DD') === item)
 
             if (findData === undefined) {
-              return <ScheduleCard key={index} item={{ date: item, isAvailableSchedule: false }}/>
+              return <ScheduleCard key={index} item={{ date: item, isAvailableSchedule: false }} />
             } else {
-              return <ScheduleCard key={index} item={{...findData, isAvailableSchedule: true}}/>
+              return <ScheduleCard key={index} item={{...findData, isAvailableSchedule: true}} navigation={navigation} />
             }
           })
         }

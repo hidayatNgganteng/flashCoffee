@@ -5,7 +5,7 @@ import HeadlineSchedule from './HeadlineSchedule'
 import EmptySchedule from './EmptySchedule'
 import moment from 'moment'
 
-const ScheduleCard = ({ item }) => {
+const ScheduleCard = ({ item, navigation }) => {
   const { store_name, shop_open_hours, shope_closing_hours, date } = item
 
   return (
@@ -16,7 +16,7 @@ const ScheduleCard = ({ item }) => {
       </View>
       {
         item.isAvailableSchedule ? (
-          <TouchableOpacity onPress={() => null} style={styles.card}>
+          <TouchableOpacity onPress={() => navigation.navigate('Detail', { schedule: item })} style={styles.card}>
             <HeadlineSchedule
               title={store_name}
               time={`${shop_open_hours} - ${shope_closing_hours}`}
