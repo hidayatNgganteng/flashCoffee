@@ -47,7 +47,8 @@ const styles = StyleSheet.create({
     backgroundColor: theme.colors.native_white
   },
   content: {
-    paddingVertical: 15
+    paddingVertical: 15,
+    flex: 1
   },
   title: {
     fontSize: theme.fonts.large,
