@@ -2,6 +2,7 @@ import React from 'react'
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
 import theme from '../theme'
 import HeadlineSchedule from './HeadlineSchedule'
+import EmptySchedule from './EmptySchedule'
 
 const ScheduleCard = ({ day, dateVal, schedule }) => {
   return (
@@ -10,15 +11,13 @@ const ScheduleCard = ({ day, dateVal, schedule }) => {
         <Text style={styles.dayStyle}>{ day }</Text>
         <Text style={styles.dateStyle}>{ dateVal }</Text>
       </View>
-      <TouchableOpacity onPress={schedule.onPress} style={styles.card}>
+      {/* <TouchableOpacity onPress={schedule.onPress} style={styles.card}>
         <HeadlineSchedule
           title={schedule.title}
           time={schedule.time}
           isWithTodayLabel={false}/>
-      </TouchableOpacity>
-      {/* <View style={styles.emptySchedule}>
-        <Text style={styles.emptyScheduleLabel}>NO SCHEDULE</Text>
-      </View> */}
+      </TouchableOpacity> */}
+      <EmptySchedule />
     </View>
   )
 }
@@ -54,19 +53,5 @@ const styles = StyleSheet.create({
     paddingVertical: 15,
     height: 85,
     justifyContent: 'center'
-  },
-  emptySchedule: {
-    alignItems: 'center',
-    justifyContent: 'center',
-    flex: 1,
-    borderRadius: 10,
-    borderWidth: 1,
-    borderColor: theme.colors.gray,
-    borderStyle: 'dashed',
-    height: 85
-  },
-  emptyScheduleLabel: {
-    fontSize: theme.fonts.normal,
-    fontWeight: 'bold'
   }
 })
