@@ -5,7 +5,7 @@ import HeaderSchedule from './HeaderSchedule'
 import HeadlineSchedule from './HeadlineSchedule'
 import theme from '../theme'
 
-const TodaySchedule = () => {
+const TodaySchedule = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <HeaderSchedule
@@ -13,7 +13,7 @@ const TodaySchedule = () => {
         btnLabel='Refresh'
         onPress={() => null}/>
 
-      <TouchableOpacity onPress={() => null} style={styles.card}>
+      <TouchableOpacity onPress={() => navigation.navigate('Detail')} style={styles.card}>
         <HeadlineSchedule
           title='Mediterania Garden Residence'
           time='08:00 - 17:00'/>

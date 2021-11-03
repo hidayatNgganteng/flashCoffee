@@ -10,15 +10,15 @@ const ScheduleCard = ({ day, dateVal, schedule }) => {
         <Text style={styles.dayStyle}>{ day }</Text>
         <Text style={styles.dateStyle}>{ dateVal }</Text>
       </View>
-      {/* <TouchableOpacity onPress={schedule.onPress} style={styles.card}>
+      <TouchableOpacity onPress={schedule.onPress} style={styles.card}>
         <HeadlineSchedule
           title={schedule.title}
           time={schedule.time}
           isWithTodayLabel={false}/>
-      </TouchableOpacity> */}
-      <View style={styles.emptySchedule}>
+      </TouchableOpacity>
+      {/* <View style={styles.emptySchedule}>
         <Text style={styles.emptyScheduleLabel}>NO SCHEDULE</Text>
-      </View>
+      </View> */}
     </View>
   )
 }

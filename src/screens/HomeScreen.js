@@ -14,7 +14,7 @@ const HomeScreen = ({ navigation }) => {
 
       <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={styles.scrollContent}>
         <View>
-          <TodaySchedule />
+          <TodaySchedule navigation={navigation} />
           <NextSchedule navigation={navigation} />
         </View>
 

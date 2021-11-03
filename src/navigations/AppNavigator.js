@@ -9,7 +9,7 @@ const Stack = createStackNavigator()
 const AppNavigator = () => {
   return (
     <Stack.Navigator
-      initialRouteName="Detail"
+      initialRouteName="Home"
       screenOptions={{
         headerShown: false
       }}>
