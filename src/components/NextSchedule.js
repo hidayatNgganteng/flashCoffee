@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { StyleSheet, View, Dimensions } from 'react-native'
 import Carousel from 'react-native-snap-carousel';
 import HeaderSchedule from './HeaderSchedule'
-import ScheduleCard from './ScheduleCard'
+import SwipeCard from './SwipeCard'
 
 const WIDTH_SCREEN = Dimensions.get('window').width
 const nextScheduleInit = [{
@@ -36,7 +36,7 @@ const NextSchedule = () => {
   const [nextSchedule, setNextSchedule] = useState(nextScheduleInit)
 
   const renderItem = ({item, index}) => (
-    <ScheduleCard
+    <SwipeCard
       storeBranch={item.storeBranch}
       onPress={() => null}/>
   )

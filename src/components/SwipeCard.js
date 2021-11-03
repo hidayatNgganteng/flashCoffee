@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
 import theme from '../theme'
 import HeadlineSchedule from './HeadlineSchedule'
 
-const ScheduleCard = ({ storeBranch, onPress }) => {
+const SwipeCard = ({ storeBranch, onPress }) => {
   return (
     <TouchableOpacity onPress={onPress} style={styles.container}>
       <View>
@@ -20,7 +20,7 @@ const ScheduleCard = ({ storeBranch, onPress }) => {
   )
 }
 
-export default ScheduleCard
+export default SwipeCard
 
 const styles = StyleSheet.create({
   container: {
