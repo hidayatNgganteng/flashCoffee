@@ -4,29 +4,44 @@ import Header from '../components/Header'
 import DetailsCard from '../components/DetailsCard'
 import ListDetails from '../components/ListDetails'
 import theme from '../theme'
+import moment from 'moment'
 
-const DetailScreen = ({ navigation }) => {
+const DetailScreen = ({ navigation, route }) => {
+  const {
+    date,
+    shop_open_hours,
+    shope_closing_hours,
+    clock_in,
+    clock_out,
+    image,
+    store_name,
+    address
+  } = route.params.schedule
+
   return (
     <View style={styles.container}>
       <Header
-        title='7 APRIL 2021'
+        title={ moment(date).format('D MMMM YYYY') }
         leftPress={() => navigation.goBack()}/>
       
       <View style={styles.content}>
         <Text style={styles.title}>STORE</Text>
-        <DetailsCard />
+        <DetailsCard
+          storeImage={image}
+          storeName={store_name}
+          address={address}/>
         <ListDetails
           title='TIME SCHEDULE'
           iconName='clock-outline'
-          time='08:00'/>
+          time={`${shop_open_hours} - ${shope_closing_hours}`}/>
         <ListDetails
           title='CLOCK IN'
           iconName='qrcode-scan'
-          time='--:--'/>
+          time={ clock_in === null ? '--:--' : clock_in }/>
         <ListDetails
           title='CLOCK OUT'
           iconName='qrcode-scan'
-          time='--:--'/>
+          time={ clock_out === null ? '--:--' : clock_out }/>
       </View>
     </View>
   )

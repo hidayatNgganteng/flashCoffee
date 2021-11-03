@@ -1,17 +1,16 @@
 import React from 'react'
 import { StyleSheet, Text, View, Image } from 'react-native'
 import { TouchableOpacity } from 'react-native-gesture-handler'
-import assets from '../assets'
 import theme from '../theme'
 
-const DetailsCard = () => {
+const DetailsCard = ({ storeImage, storeName, address }) => {
   return (
     <View style={styles.container}>
-      <Image source={assets.images.flashCoffeeSpace} style={styles.thumbnail} />
+      <Image source={storeImage} style={styles.thumbnail} />
 
       <View style={styles.content}>
-        <Text style={styles.title}>Mediterania garden residence</Text>
-        <Text style={styles.description}>Main Lobby, Apartement Mediterania Garden Residence 1 (Bougenfile T</Text>
+        <Text style={styles.title}>{ storeName }</Text>
+        <Text style={styles.description}>{ `${address}`.substring(0, 120) }...</Text>
         <TouchableOpacity onPress={() => null} style={styles.btn}>
           <Text style={styles.labelBtn}>View maps</Text>
         </TouchableOpacity>

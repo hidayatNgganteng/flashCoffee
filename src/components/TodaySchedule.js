@@ -15,7 +15,7 @@ const TodaySchedule = ({ navigation, schedule }) => {
         btnLabel='Refresh'
         onPress={() => null}/>
 
-      <TouchableOpacity onPress={() => navigation.navigate('Detail')} style={styles.card}>
+      <TouchableOpacity onPress={() => navigation.navigate('Detail', { schedule })} style={styles.card}>
         <HeadlineSchedule
           title={ store_name }
           time={ `${shop_open_hours} - ${shope_closing_hours}` }/>
