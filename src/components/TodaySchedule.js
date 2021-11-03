@@ -1,12 +1,37 @@
 import React from 'react'
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
+import _ from 'lodash'
 import CustomButton from './CustomButton'
 import HeaderSchedule from './HeaderSchedule'
 import HeadlineSchedule from './HeadlineSchedule'
 import theme from '../theme'
 
 const TodaySchedule = ({ navigation, schedule }) => {
-  const { store_name, shop_open_hours, shope_closing_hours, clock_in, clock_out, isOpen } = schedule
+  
+
+  const renderCard = data => {
+    const { store_name, shop_open_hours, shope_closing_hours, clock_in, clock_out } = data
+
+    return (
+      <TouchableOpacity onPress={() => navigation.navigate('Detail', { schedule: data })} style={styles.card}>
+        <HeadlineSchedule
+          title={ store_name }
+          time={ `${shop_open_hours} - ${shope_closing_hours}` }/>
+
+        <View style={styles.labelInfo}>
+          <View style={styles.cardInfo}>
+            <CustomButton onPress={() => null} label='CLOCK IN' btnStyles={{}} />
+            <Text style={styles.checkTime}>{ clock_in === null ? '-- : --' : clock_in }</Text>
+          </View>
+          <Text style={styles.checkDash}>-----------</Text>
+          <View style={styles.cardInfo}>
+            <CustomButton onPress={() => null} label='CLOCK OUT' btnStyles={styles.btnClockOut} />
+            <Text style={styles.checkTime}>{ clock_out === null ? '-- : --' : clock_out }</Text>
+          </View>
+        </View>
+      </TouchableOpacity>
+    )
+  }
 
   return (
     <View style={styles.container}>
@@ -17,28 +42,12 @@ const TodaySchedule = ({ navigation, schedule }) => {
 
       
         {
-          isOpen ? (
-            <TouchableOpacity onPress={() => navigation.navigate('Detail', { schedule })} style={styles.card}>
-              <HeadlineSchedule
-                title={ store_name }
-                time={ `${shop_open_hours} - ${shope_closing_hours}` }/>
-
-              <View style={styles.labelInfo}>
-                <View style={styles.cardInfo}>
-                  <CustomButton onPress={() => null} label='CLOCK IN' btnStyles={{}} />
-                  <Text style={styles.checkTime}>{ clock_in === null ? '-- : --' : clock_in }</Text>
-                </View>
-                <Text style={styles.checkDash}>-----------</Text>
-                <View style={styles.cardInfo}>
-                  <CustomButton onPress={() => null} label='CLOCK OUT' btnStyles={styles.btnClockOut} />
-                  <Text style={styles.checkTime}>{ clock_out === null ? '-- : --' : clock_out }</Text>
-                </View>
-              </View>
-            </TouchableOpacity>
-          ) : (
+          schedule === undefined ? (
             <TouchableOpacity onPress={() => null} style={styles.card} disabled>
               <Text style={styles.noSchedule}>NO SCHEDULE</Text>
             </TouchableOpacity>
+          ) : (
+            renderCard(schedule)
           )
         }
     </View>

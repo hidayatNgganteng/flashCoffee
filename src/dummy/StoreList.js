@@ -8,8 +8,7 @@ const store = [
     shop_open_hours: '08:00',
     shope_closing_hours: '17:00',
     clock_in: '09:00',
-    clock_out: '10:00',
-    isOpen: true
+    clock_out: '10:00'
   },
   {
     id: "3",
@@ -20,8 +19,7 @@ const store = [
     shop_open_hours: '08:00',
     shope_closing_hours: '17:00',
     clock_in: '09:00',
-    clock_out: '10:00',
-    isOpen: true
+    clock_out: '10:00'
   },
   {
     id: "4",
@@ -32,8 +30,7 @@ const store = [
     shop_open_hours: '08:00',
     shope_closing_hours: '17:00',
     clock_in: '09:00',
-    clock_out: '10:00',
-    isOpen: true
+    clock_out: '10:00'
   }
 ]
 

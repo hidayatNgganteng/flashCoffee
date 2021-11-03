@@ -18,8 +18,7 @@ const scheduleInit = {
   shop_open_hours: '08:00',
   shope_closing_hours: '17:00',
   clock_in: null,
-  clock_out: null,
-  isOpen: true
+  clock_out: null
 }
 
 const HomeScreen = ({ navigation }) => {
@@ -32,8 +31,7 @@ const HomeScreen = ({ navigation }) => {
   }, [])
 
   const todaySchedule = schedules.find(item => item.date === moment().format('YYYY-MM-DD'))
-  const nextSchedule = schedules.filter(item => item.isOpen)
-
+  
   return (
     <View style={styles.container}>
       <HomeInfo />
@@ -41,7 +39,7 @@ const HomeScreen = ({ navigation }) => {
       <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={styles.scrollContent}>
         <View>
           <TodaySchedule schedule={todaySchedule} navigation={navigation} />
-          <NextSchedule schedules={nextSchedule} navigation={navigation} />
+          <NextSchedule schedules={schedules}  navigation={navigation} />
         </View>
 
         <HomeFooter />

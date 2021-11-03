@@ -12,13 +12,15 @@ const HeadlineSchedule = ({ title, time, isWithTodayLabel }) => {
       <View style={styles.timeStyle}>
         <Icon name='clock-outline' size={25} color={theme.colors.black} />
         <Text style={styles.hourStyle}>{ time }</Text>
-        {
-          isWithTodayLabel && (
-            <CustomButton
-              label='TODAY'
-              btnStyles={styles.btn}/>
-          )
-        }
+        <View style={styles.boxToday}>
+          {
+            isWithTodayLabel && (
+              <CustomButton
+                label='TODAY'
+                btnStyles={styles.btn}/>
+            )
+          }
+        </View>
       </View>
     </View>
   )
@@ -42,5 +44,8 @@ const styles = StyleSheet.create({
   },
   btn: {
     backgroundColor: theme.colors.pink
+  },
+  boxToday: {
+    marginLeft: 5
   }
 })
