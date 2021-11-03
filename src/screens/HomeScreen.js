@@ -9,8 +9,20 @@ import theme from '../theme'
 import { getSchedules } from '../dummy/StoreList'
 import moment from 'moment'
 
+const scheduleInit = {
+  id: "0",
+  store_name: '',
+  address: '',
+  image: require('../assets/images/flash-coffee-space.jpeg'),
+  date: moment().format('YYYY-MM-DD'),
+  shop_open_hours: '08:00',
+  shope_closing_hours: '17:00',
+  clock_in: null,
+  clock_out: null
+}
+
 const HomeScreen = ({ navigation }) => {
-  const [schedules, setSchedules] = useState([])
+  const [schedules, setSchedules] = useState([scheduleInit])
 
   useEffect(() => {
     getSchedules().then(res => {
@@ -27,7 +39,7 @@ const HomeScreen = ({ navigation }) => {
       <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={styles.scrollContent}>
         <View>
           <TodaySchedule schedule={todaySchedule} navigation={navigation} />
-          <NextSchedule navigation={navigation} />
+          <NextSchedule schedules={schedules} navigation={navigation} />
         </View>
 
         <HomeFooter />

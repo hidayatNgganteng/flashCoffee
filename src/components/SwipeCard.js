@@ -1,20 +1,23 @@
+import moment from 'moment'
 import React from 'react'
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
 import theme from '../theme'
 import HeadlineSchedule from './HeadlineSchedule'
 
-const SwipeCard = ({ storeBranch, onPress }) => {
+const SwipeCard = ({ item, onPress }) => {
+  const { date, store_name, shop_open_hours, shope_closing_hours } = item
+
   return (
     <TouchableOpacity onPress={onPress} style={styles.container}>
       <View>
-        <Text style={styles.title}>WEDNESDAY</Text>
-        <Text style={styles.dateStyle}>7 Apr</Text>
+        <Text style={styles.title}>{ `${moment(date).format('dddd')}`.toUpperCase() }</Text>
+        <Text style={styles.dateStyle}>{ moment(date).format('d MMM') }</Text>
       </View>
 
       <View style={styles.boxHeadline}>
         <HeadlineSchedule
-          title={ storeBranch }
-          time='08:00 - 17:00'/>
+          title={store_name}
+          time={`${shop_open_hours} - ${shope_closing_hours}`}/>
       </View>
     </TouchableOpacity>
   )
