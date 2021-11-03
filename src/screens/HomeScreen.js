@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { StyleSheet, View } from 'react-native'
-import { FlatList, ScrollView } from 'react-native-gesture-handler'
+import { ScrollView } from 'react-native-gesture-handler'
 import HomeInfo from '../components/HomeInfo'
 import TodaySchedule from '../components/TodaySchedule'
 import NextSchedule from '../components/NextSchedule'

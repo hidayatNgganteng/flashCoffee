@@ -1,6 +1,5 @@
 import React from 'react'
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
-import _ from 'lodash'
 import CustomButton from './CustomButton'
 import HeaderSchedule from './HeaderSchedule'
 import HeadlineSchedule from './HeadlineSchedule'
