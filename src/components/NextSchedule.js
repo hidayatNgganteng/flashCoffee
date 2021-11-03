@@ -32,7 +32,7 @@ const nextScheduleInit = [{
   storeBranch: 'Iceland Tower Residence'
 }]
 
-const NextSchedule = () => {
+const NextSchedule = ({ navigation }) => {
   const [nextSchedule, setNextSchedule] = useState(nextScheduleInit)
 
   const renderItem = ({item, index}) => (
@@ -46,7 +46,7 @@ const NextSchedule = () => {
       <HeaderSchedule
         label='NEXT SCHEDULE'
         btnLabel='See all'
-        onPress={() => null}/>
+        onPress={() => navigation.navigate('Schedules')}/>
 
       <View style={styles.boxNextSchedule}>
         <Carousel

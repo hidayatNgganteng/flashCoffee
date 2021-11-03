@@ -9,7 +9,7 @@ const Stack = createStackNavigator()
 const AppNavigator = () => {
   return (
     <Stack.Navigator
-      initialRouteName="Schedules"
+      initialRouteName="Home"
       screenOptions={{
         headerShown: false
       }}>

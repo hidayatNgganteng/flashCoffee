@@ -5,12 +5,12 @@ import Header from '../components/Header'
 import ScheduleCard from '../components/ScheduleCard'
 import theme from '../theme'
 
-const SchedulesScreen = () => {
+const SchedulesScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <Header
         title='UPCOMING SCHEDULE'
-        leftPress={() => null}
+        leftPress={() => navigation.goBack()}
         rightPress={() => null}/>
 
       <View style={styles.content}>
@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
     backgroundColor: theme.colors.native_white
   },
   content: {
-    paddingVertical: 15,
+    paddingVertical: 20,
     flex: 1
   },
   title: {
