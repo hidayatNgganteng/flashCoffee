@@ -3,14 +3,11 @@ import { StyleSheet, Text, View, Platform } from 'react-native'
 import Icon from 'react-native-vector-icons/Ionicons'
 import IconAwesome from 'react-native-vector-icons/FontAwesome'
 import { TouchableOpacity } from 'react-native-gesture-handler'
-import { useHeaderHeight } from '@react-navigation/elements';
 import theme from '../theme'
 
 const Header = ({ title, leftPress, rightPress }) => {
-  const HeaderApp = useHeaderHeight()
-
   return (
-    <View style={[styles.container, { height: Platform.OS === 'ios' ? 44 : HeaderApp.HEIGHT }]}>
+    <View style={[styles.container, { height: Platform.OS === 'ios' ? 44 : 56 }]}>
       <TouchableOpacity onPress={leftPress} style={styles.btn}>
         <Icon name='arrow-back' size={28} color={theme.colors.black} />
       </TouchableOpacity>
