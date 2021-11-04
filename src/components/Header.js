@@ -3,12 +3,11 @@ import { StyleSheet, Text, View, Platform } from 'react-native'
 import Icon from 'react-native-vector-icons/Ionicons'
 import IconAwesome from 'react-native-vector-icons/FontAwesome'
 import { TouchableOpacity } from 'react-native-gesture-handler'
-import { Header as HeaderApp } from '@react-navigation/native'
 import theme from '../theme'
 
 const Header = ({ title, leftPress, rightPress }) => {
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, { height: Platform.OS === 'ios' ? 44 : 56 }]}>
       <TouchableOpacity onPress={leftPress} style={styles.btn}>
         <Icon name='arrow-back' size={28} color={theme.colors.black} />
       </TouchableOpacity>
@@ -31,8 +30,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    backgroundColor: theme.colors.yellow,
-    height: Platform.OS === 'ios' ? 44 : HeaderApp.HEIGHT,
+    backgroundColor: theme.colors.yellow
   },
   btn: {
     height: '100%',
