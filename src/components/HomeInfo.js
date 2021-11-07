@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useCallback } from 'react'
 import { StyleSheet, Text, View, Image, Dimensions, TouchableOpacity } from 'react-native'
 import Icon from 'react-native-vector-icons/Ionicons'
+import { useFocusEffect } from '@react-navigation/native'
 import moment from 'moment'
 import assets from '../assets'
 import theme from '../theme'
@@ -10,15 +11,17 @@ const WIDTH_SCREEN = Dimensions.get('window').width
 const HomeInfo = () => {
   const [dateTime, setDateTime] = useState(moment().format('YYYY-MM-DD HH:mm:ss'))
 
-  useEffect(() => {
-    setTime = setInterval(() => { 
-      setDateTime(moment().format('YYYY-MM-DD HH:mm:ss'))
-    }, 1000)
+  useFocusEffect(
+    useCallback(() => {
+      setTime = setInterval(() => { 
+        setDateTime(moment().format('YYYY-MM-DD HH:mm:ss'))
+      }, 1000)
 
-    return () =>{
+      return () => {
         clearInterval(setTime)
-    }
-  }, [])
+      }
+    }, [])
+  )
 
   return (
     <View style={styles.info}>
