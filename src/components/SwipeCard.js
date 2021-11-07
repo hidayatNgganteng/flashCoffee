@@ -11,7 +11,7 @@ const SwipeCard = ({ item, onPress }) => {
     <TouchableOpacity onPress={onPress} style={styles.container}>
       <View>
         <Text style={styles.title}>{ `${moment(date).format('dddd')}`.toUpperCase() }</Text>
-        <Text style={styles.dateStyle}>{ moment(date).format('d MMM') }</Text>
+        <Text style={styles.dateStyle}>{ moment(date).format('D MMM') }</Text>
       </View>
 
       <View style={styles.boxHeadline}>

@@ -56,15 +56,17 @@ const SchedulesScreen = ({ navigation, route }) => {
     return (
       <View>
         {
-          countDayOfMonth.map((item, index) => {
-            const findData = data.find(i => moment(i.date).format('YYYY-MM-DD') === item)
-
-            if (findData === undefined) {
-              return <ScheduleCard key={index} item={{ date: item, isAvailableSchedule: false }} />
-            } else {
-              return <ScheduleCard key={index} item={{...findData, isAvailableSchedule: true}} navigation={navigation} />
-            }
-          })
+          countDayOfMonth
+            .filter(el => moment(el).isSameOrAfter(moment().format('YYYY-MM-DD')))
+            .map((item, index) => {
+              const findData = data.find(i => moment(i.date).format('YYYY-MM-DD') === item)
+              
+              if (findData === undefined) {
+                return <ScheduleCard key={index} item={{ date: item, isAvailableSchedule: false }} />
+              } else {
+                return <ScheduleCard key={index} item={{...findData, isAvailableSchedule: true}} navigation={navigation} />
+              }
+            })
         }
       </View>
     )
