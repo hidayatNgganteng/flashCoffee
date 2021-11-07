@@ -79,19 +79,20 @@ const SchedulesScreen = ({ navigation, route }) => {
         leftPress={() => navigation.goBack()}
         rightPress={() => null}/>
 
-      {
-        scheduleByMonth.map((item, index) => (
-          <View style={styles.content} key={index}>
-          <Text style={styles.title}>{ item.month }</Text>
-          <View style={styles.divider}/>
-          <ScrollView showsVerticalScrollIndicator={false} style={styles.list}>
+      <ScrollView showsVerticalScrollIndicator={false} style={styles.list}>
+        {
+          scheduleByMonth.map((item, index) => (
+            <View style={styles.content} key={index}>
+            <Text style={styles.title}>{ item.month }</Text>
+            <View style={styles.divider}/>
+            
             {
               generateSchedule(item.data)
             }
-          </ScrollView>
-        </View>
-        ))
-      }
+          </View>
+          ))
+        }
+      </ScrollView>
     </View>
   )
 }

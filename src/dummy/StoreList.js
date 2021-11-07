@@ -64,7 +64,117 @@ const store = [
     shope_closing_hours: '21:00',
     clock_in: null,
     clock_out: null
-  }
+  },
+  {
+    id: "20211108",
+    store_name: 'Flash Coffee Yogyakarta',
+    address: 'Jl Laksda adisucipto, Dekat Bandara lama',
+    image: require('../assets/images/flash-coffee-space-3.jpeg'),
+    date: '2021-11-08',
+    shop_open_hours: '08:00',
+    shope_closing_hours: '21:00',
+    clock_in: null,
+    clock_out: null
+  },
+  {
+    id: "20211109",
+    store_name: 'Flash Coffee Yogyakarta',
+    address: 'Jl Laksda adisucipto, Dekat Bandara lama',
+    image: require('../assets/images/flash-coffee-space-3.jpeg'),
+    date: '2021-11-09',
+    shop_open_hours: '08:00',
+    shope_closing_hours: '21:00',
+    clock_in: '06:00',
+    clock_out: '21:00'
+  },
+  {
+    id: "20211110",
+    store_name: 'Flash Coffee Yogyakarta',
+    address: 'Jl Laksda adisucipto, Dekat Bandara lama',
+    image: require('../assets/images/flash-coffee-space-3.jpeg'),
+    date: '2021-11-10',
+    shop_open_hours: '08:00',
+    shope_closing_hours: '21:00',
+    clock_in: null,
+    clock_out: null
+  },
+  {
+    id: "20211111",
+    store_name: 'Flash Coffee Yogyakarta',
+    address: 'Jl Laksda adisucipto, Dekat Bandara lama',
+    image: require('../assets/images/flash-coffee-space-3.jpeg'),
+    date: '2021-11-11',
+    shop_open_hours: '08:00',
+    shope_closing_hours: '21:00',
+    clock_in: '06:00',
+    clock_out: '21:00'
+  },
+  {
+    id: "20211112",
+    store_name: 'Flash Coffee Yogyakarta',
+    address: 'Jl Laksda adisucipto, Dekat Bandara lama',
+    image: require('../assets/images/flash-coffee-space-3.jpeg'),
+    date: '2021-11-12',
+    shop_open_hours: '08:00',
+    shope_closing_hours: '21:00',
+    clock_in: null,
+    clock_out: null
+  },
+  {
+    id: "20211113",
+    store_name: 'Flash Coffee Yogyakarta',
+    address: 'Jl Laksda adisucipto, Dekat Bandara lama',
+    image: require('../assets/images/flash-coffee-space-3.jpeg'),
+    date: '2021-11-13',
+    shop_open_hours: '08:00',
+    shope_closing_hours: '21:00',
+    clock_in: null,
+    clock_out: null
+  },
+  {
+    id: "20211114",
+    store_name: 'Flash Coffee Yogyakarta',
+    address: 'Jl Laksda adisucipto, Dekat Bandara lama',
+    image: require('../assets/images/flash-coffee-space-3.jpeg'),
+    date: '2021-11-14',
+    shop_open_hours: '08:00',
+    shope_closing_hours: '21:00',
+    clock_in: null,
+    clock_out: null
+  },
+  {
+    id: "20211115",
+    store_name: 'Flash Coffee Yogyakarta',
+    address: 'Jl Laksda adisucipto, Dekat Bandara lama',
+    image: require('../assets/images/flash-coffee-space-3.jpeg'),
+    date: '2021-11-15',
+    shop_open_hours: '08:00',
+    shope_closing_hours: '21:00',
+    clock_in: null,
+    clock_out: null
+  },
+  {
+    id: "20211203",
+    store_name: 'Flash Coffee Yogyakarta',
+    address: 'Jl Laksda adisucipto, Dekat Bandara lama',
+    image: require('../assets/images/flash-coffee-space-3.jpeg'),
+    date: '2021-12-03',
+    shop_open_hours: '08:00',
+    shope_closing_hours: '21:00',
+    clock_in: null,
+    clock_out: null
+  },
+  {
+    id: "20211204",
+    store_name: 'Flash Coffee Yogyakarta',
+    address: 'Jl Laksda adisucipto, Dekat Bandara lama',
+    image: require('../assets/images/flash-coffee-space-3.jpeg'),
+    date: '2021-12-04',
+    shop_open_hours: '08:00',
+    shope_closing_hours: '21:00',
+    clock_in: null,
+    clock_out: null
+  },
 ]
 
 export const getSchedules = () => new Promise((resolve, reject) => {
